@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Blogly {% endblock %}
+
+{% block content %}
+
+<h1>Blogly Feed</h1>
+
+{% for post in posts %}
+<h2><a href="/posts/{{post.id}}">{{post.title}}</a></h2>
+
+<p>{{post.content}}</p>
+
+<p>
+  <small>{{post.user.first_name}} {{post.user.last_name}}</small>
+  <br><small><i>{{post.formatted_date}}</i></small><br>
+</p>
+
+
+{% endfor %}
+
+{% endblock %}
